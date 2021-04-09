@@ -2,7 +2,7 @@ python: 3.6
 cuda: 10.0
 entrypoint: python runway_model.py
 build_steps:
-  - pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/opencv-python/opencv_python-3.4.1.15-cp36-cp36m-win_amd64.whl
+  - pip install opencv-python==3.4.10.35 -i https://pypi.tuna.tsinghua.edu.cn/simple
   - pip install -r requirements.txt
 
 
