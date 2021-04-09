@@ -1,0 +1,8 @@
+train: ../Train2/images/  
+val: ../Train2/images/  
+
+# number of classes
+nc: 3
+
+# class names
+names: ['phone30','phone60','phone90']
