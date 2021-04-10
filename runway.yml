@@ -4,5 +4,3 @@ entrypoint: python runway_model.py
 build_steps:
   - pip install opencv-python==3.4.10.35 -i https://pypi.tuna.tsinghua.edu.cn/simple
   - pip install -r requirements.txt
-
-
