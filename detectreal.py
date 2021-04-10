@@ -3,7 +3,7 @@ import os
 import shutil
 import time
 from pathlib import Path
-
+from PIL import Image
 import cv2
 import torch
 import torch.backends.cudnn as cudnn
@@ -159,10 +159,12 @@ def detectreal(model,input):
                 returnvalue.append(int((ix[0]+ix[2])/2))
                 returnvalue.append(int((ix[1]+ix[3])/2))
                 #ix.append(angle1)
-                return np.array(returnvalue)
+                cv2.circle(dataset.img0,(int((ix[0]+ix[2])/2),int((ix[1]+ix[3])/2)),5,(255,0,0),5)
+                returnimg = Image.fromarray(np.uint8(dataset.img0))
+                return np.array(returnvalue),returnimg
             else:
                 continue
-        return np.array([0,0])
-    return np.array([0,0])
+        return np.array([0,0]),Image.fromarray(np.uint8(dataset.img0))
+    return np.array([0,0]),Image.fromarray(np.uint8(dataset.img0))
 
 
