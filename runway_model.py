@@ -59,12 +59,13 @@ def setup():
 
 @runway.command(name='generate',
                 inputs={ 'photo': image() },
-                outputs={ 'ret':vector(length = 0) },
+                outputs={ 'ret':vector(length = 0),'images':image()  },
                 description='Generates a red square when the input text input is "red".')
 def generate(model, input):
     output_image = model.run_on_input(input)
     return {
-        'ret': output_image
+        'ret': output_image,
+        'images':images
     }
 
 if __name__ == '__main__':
